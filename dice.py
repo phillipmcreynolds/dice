@@ -2,6 +2,7 @@ from tkinter import *
 import random
 
 def roll_die(sides):
+    root.title(app + " (D" + str(sides) + ")")
     roll = random.randint(1, sides)
     rollLabel.set(str(roll))
 
@@ -12,7 +13,8 @@ def createButton(n, x, y):
            height = 2, width=9).grid(row = x, column = y, sticky=E)
 
 root = Tk()  # create parent window
-root.title('Dice App')
+app = 'Dice App'
+root.title(app)
 rollLabel = StringVar()
 Label(root, font=('futura', 25, 'bold'), textvariable = rollLabel,
       justify=LEFT, height=2, width=7).grid(columnspan=4, ipadx=120)
